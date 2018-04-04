@@ -4,7 +4,7 @@ FROM kaixhin/torch
 # Don't forget to run "xhost local:root" on the host machine
 
 RUN luarocks install dpnn
-RUN apt update
+RUN apt-get update
 RUN apt-get install libwxbase3.0-dev libwxgtk3.0-dev libwxgtk-media3.0-dev libopencv-dev -y
 
 WORKDIR /root
@@ -27,4 +27,4 @@ RUN ln -s /root/wxlua/wxLua/lib/Debug/libwx.so /root/torch/install/lib/wx.so
 WORKDIR /root/torch-image-completion
 
 # A fix from the Internet (https://stackoverflow.com/questions/12689304/ctypes-error-libdc1394-error-failed-to-initialize-libdc1394) for an error I encountered
-ln /dev/null /dev/raw1394
+RUN ln /dev/null /dev/raw1394
