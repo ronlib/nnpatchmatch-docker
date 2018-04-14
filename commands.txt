@@ -1,5 +1,8 @@
 xhost local:root
+git clone https://github.com/ronlib/PatchMatch.git
+git clone https://github.com/ronlib/torch-image-completion.git
+docker pull ronlibdock/nnpatchmatch:v2
 
-docker pull ronlibdock/nnpatchmatch:v1
 # docker build -t nnpatchmatch .
-docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -v ~/model16_570.t7:/root/torch-image-completion/model16_570.t7 ronlibdock/nnpatchmatch:v1 bash
+
+docker run -it -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=unix$DISPLAY -v ~/model16_570.t7:/root/torch-image-completion/model16_570.t7 -v ~/develop/torch-image-completion:/root/torch-image-completion -v /home/ron/develop/PatchMatch:/root/PatchMatch --privileged ronlibdock/nnpatchmatch:v2 bash

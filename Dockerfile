@@ -15,6 +15,7 @@ RUN luarocks install dpnn ; \
 		git clone https://github.com/pkulchenko/wxlua.git ; \
 		cd /root/PatchMatch ; cmake . ; make ; \
 		ln -s /root/PatchMatch/libluainpaint.so /root/torch/install/lib/luainpaint.so ; \
+		ln -s /root/PatchMatch/libpatchmatch2.so /root/torch/install/lib/libpatchmatch2.so ; \
 		ln -s /root/PatchMatch/patch2vec.lua /root/torch-image-completion/patch2vec.lua ; \
 		cd /root/wxlua/wxLua ; cmake . -DCMAKE_BUILD_TYPE=Release ; make ; \
 		ln -s /root/wxlua/wxLua/lib/Release/libwx.so /root/torch/install/lib/wx.so ; \
