@@ -19,3 +19,10 @@ cd /root/torch-image-completion
 gdb /root/torch/install/bin/luajit
 (inside gdb:
 run run_inpaint.lua)
+# If not debugging, the code can be run by:
+th run_inpaint.lua 	# 'th' is a shortcut for /root/torch/install/bin/luajit
+
+# Pull the result image from the container:
+sudo docker container ls 		 # Find out what is the name of the container you're using
+# The output
+sudo docker cp <container_name>:/tmp/vote.bmp ./vote.bmp
