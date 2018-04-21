@@ -16,6 +16,9 @@ make
 
 cd /root/torch-image-completion
 
+# Later, for rebuilding the project, one can run:
+cd ../PatchMatch/ ; make ; cd ../torch-image-completion
+
 gdb /root/torch/install/bin/luajit
 (inside gdb:
 run run_inpaint.lua)
